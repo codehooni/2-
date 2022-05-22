@@ -1,0 +1,73 @@
+
+.planet{
+    position: absolute; 
+    width: 80px;
+    height: 80px;
+    left: 0;
+    top: 50%;
+}
+#태양{
+    display: flex;
+    left: -75px;
+    width: 150px;
+    height: 150px;
+}
+#수성{
+    animation: moveto 3s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -80.4337158203125 -202.6114959716797 A 217.99312707714367 217.99312707714367 0 1 1 -79.36695861816406 203.03175354003906');
+}
+#금성{
+    width: 50px;
+    height: 50px;
+    animation: moveto 7s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -105.62736511230469 -266.0740051269531 A 286.2734932356683 286.2734932356683 0 1 1 -104.22647857666016 266.6258850097656');
+}
+#지구{
+    animation: moveto 10s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -134.44419860839844 -338.6632385253906 A 364.3734662241264 364.3734662241264 0 1 1 -132.66111755371094 339.36566162109375');
+}
+#화성{
+    animation: moveto 13s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -169.7278594970703 -427.5423278808594 A 460.00000000000097 460.00000000000097 0 1 1 -167.47683715820312 428.4291076660156');
+}
+#목성{
+    animation: moveto 15s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -207.73216247558594 -523.2747192382812 A 563.000061035157 563.000061035157 0 1 1 -204.97711181640625 524.3600463867188');
+}
+#토성{
+    animation: moveto 17s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -248.688232421875 -626.4425048828125 A 674.0000610351569 674.0000610351569 0 1 1 -245.38999938964844 627.7418212890625');
+}
+#천왕성{
+    animation: moveto 20s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -286.6925354003906 -722.1748657226562 A 777.0001220703131 777.0001220703131 0 1 1 -282.8902587890625 723.6727905273438');
+}
+#해왕성{
+    animation: moveto 25s linear;
+    animation-iteration-count: infinite;
+    offset: path('M -325.43475341796875 -819.7659912109375 A 882.0000610351567 882.0000610351567 0 1 1 -321.11865234375 821.46630859375');
+}
+
+
+#태양:hover , #수성:hover, #금성:hover, #지구:hover, #화성:hover, #목성:hover, #토성:hover, #천왕성:hover, #해왕성:hover {
+    transform: scale( 1.5 );
+    transition: 1s;
+    animation-play-state:paused;
+}
+
+@keyframes moveto{
+    0%{
+        offset-distance: 0%
+    }
+    100%{
+        transform: rotate(-580deg);
+        offset-distance: 100%;
+    }
+}
