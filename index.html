@@ -1,16 +1,30 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="utf-8"/>
+	<title>Kakao 지도 시작하기</title>
 </head>
-<body background="images/SpaceBG.gif">
-    <a href="https://namu.wiki/w/태양" target="_blank"><img src="images/Solar.png" id="태양" title="주헌"></a>
-    <a href="https://namu.wiki/w/수성" target="_blank"><img src="images/Mercury.png" class="planet" id="수성" title="수성"></a>
-    <a href="https://namu.wiki/w/금성" target="_blank"><img src="images/Venus.png" class="planet" id="금성" title="금성"></a>
-    <a href="https://namu.wiki/w/지구" target="_blank"><img src="images/Earth.png" class="planet" id="지구" title="지구"></a>
-    <a href="https://namu.wiki/w/화성" target="_blank"><img src="images/Mars.png" class="planet" id="화성" title="화성"></a>
-    <a href="https://namu.wiki/w/목성" target="_blank"><img src="images/Jupiter.png" class="planet" id="목성" title="목성"></a>
-    <a href="https://namu.wiki/w/토성" target="_blank"><img src="images/Saturn.png" class="planet" id="토성" title="토성"></a>
-    <a href="https://namu.wiki/w/천왕성" target="_blank"><img src="images/Uranus.png" class="planet" id="천왕성" title="천왕성"></a>
-    <a href="https://namu.wiki/w/해왕성" target="_blank"><img src="images/Neptune.png" class="planet" id="해왕성" title="해왕성"></a>
+<body>
+	<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d80388522fc1d9aebf746a891adae4d4"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+        var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+	</script>
 </body>
 </html>
